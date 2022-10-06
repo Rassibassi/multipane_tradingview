@@ -36,13 +36,8 @@ function generateHistogramData(minValue, maxValue) {
 }
 
 export const ChartRenderer = (props) => {
-
-    // https://github.com/tradingview/lightweight-charts/blob/master/docs/customization.md
-    const { className, children, data = {}, ...options } = props;
     const containerRef = useRef();
     const [state, setState] = useState({ chart: null, sources: {} });
-
-    const [paneRefs, setPaneRefs] = useState([]);
 
     useEffect(() => {
         const chart = createChart(containerRef.current, {
